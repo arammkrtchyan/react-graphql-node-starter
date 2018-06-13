@@ -1,0 +1,16 @@
+{
+  "name": "babel-preset-node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "babel-plugin-transform-async-to-bluebird": "^1.1.1",
+    "babel-plugin-transform-promise-to-bluebird": "^1.1.1",
+    "babel-preset-app": "*"
+  },
+  "engines": {
+    "node": ">=8.1.0",
+    "yarn": ">=1.5.1"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=8.1.0",
+    "yarn": ">=1.5.1"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0"
+  }
+}

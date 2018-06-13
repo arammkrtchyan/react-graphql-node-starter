@@ -1,0 +1,5 @@
+{
+    "babelrc": false,
+    "presets": ["./babel-preset.js"]
+  }
+  
