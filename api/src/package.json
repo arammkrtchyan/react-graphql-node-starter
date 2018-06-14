@@ -1,0 +1,22 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "main": "app/app.js.js",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bunyan": "^1.8.12",
+    "cluster": "^0.7.7",
+    "graphql": "^0.13.2",
+    "hashids": "^1.1.4",
+    "join-monster": "^2.0.16",
+    "spdy": "^3.4.7"
+  },
+  
+  "devDependencies": {
+    "babel-plugin-module-resolver": "^3.1.1",
+    "babel-preset-app-node": "*",
+    "chalk": "^2.4.1",
+    "node-dev": "^3.1.3"
+  }
+}

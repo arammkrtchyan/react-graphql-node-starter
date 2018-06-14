@@ -1,14 +1,22 @@
 {
-  "name": "api",
+  "name": "api-cli",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "private": true,
-  "engines": {
-    "node": ">=8.1.0",
-    "yarn": ">=1.5.1"
+  "scripts": {
+    "bootstrap": "yarn",
+    "postinstall": "cd src && yarn"
   },
   "devDependencies": {
     "cross-env": "^5.2.0"
+  },
+  "dependencies": {
+    "cross-var": "^1.1.0",
+    "env-cmd": "^8.0.2"
+  },
+  "engines": {
+    "node": ">=8.1.0",
+    "yarn": ">=1.5.1"
   }
 }

@@ -5,8 +5,9 @@
   "useWorkspaces": true,
   "packages": [
     "babel-preset-app",
-    "babel-preset-node",
+    "babel-preset-app-node",
     "web",
-    "api"
+    "api",
+    "api/src"
   ]
 }
