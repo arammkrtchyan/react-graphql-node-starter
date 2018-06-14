@@ -2,6 +2,7 @@ import spdy from "spdy";
 import os from "os";
 import cluster from "cluster";
 import logger from "./common/logger";
+import app from './app';
 
 const runServer = () => {
   logger.info(`API server worker ${process.pid} is starting up.`);
@@ -19,10 +20,7 @@ const runServer = () => {
     }
   };
 
-  const server = spdy.createServer(options, function(req, res) {
-    res.writeHead(200);
-    res.end("hello world!");
-  });
+  const server = spdy.createServer(options, app.callback());
 
   const port = process.env.API_PORT || 8081;
   server.listen(port, () =>

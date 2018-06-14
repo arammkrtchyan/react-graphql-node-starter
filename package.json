@@ -16,7 +16,9 @@
     "babel-preset-app-node",
     "web",
     "api",
-    "api/src"
+    "api/src",
+    "sql",
+    "sql/src"
   ],
   "engines": {
     "node": ">=8.1.0",
