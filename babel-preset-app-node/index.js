@@ -8,7 +8,8 @@ module.exports = (api, opts = {}) => ({
           node: "current"
         }
       }
-    ]
+    ],
+    ["app", opts]
   ],
   // Run in normal order
   plugins: ["transform-async-to-bluebird", "transform-promise-to-bluebird"]

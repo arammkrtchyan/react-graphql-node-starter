@@ -5,8 +5,10 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "bootstrap": "yarn",
-    "postinstall": "cd src && yarn"
+    "_exec_in_src_": "cd src && yarn",
+    "_local_env_cmd_": "env-cmd ./env/local/.env",
+    "local": "cross-env NODE_ENV=development yarn _local_env_cmd_ yarn _exec_in_src_ start:watch",
+    "build": "yarn _exec_in_src yarn build"
   },
   "devDependencies": {
     "cross-env": "^5.2.0"

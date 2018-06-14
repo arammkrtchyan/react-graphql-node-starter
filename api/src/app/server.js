@@ -1,7 +1,7 @@
 import spdy from "spdy";
 import os from "os";
 import cluster from "cluster";
-import logger from "common/logger";
+import logger from "./common/logger";
 
 const runServer = () => {
   logger.info(`API server worker ${process.pid} is starting up.`);
@@ -26,7 +26,7 @@ const runServer = () => {
 
   const port = process.env.API_PORT || 8081;
   server.listen(port, () =>
-    logger.info(`API server worker ${process.pid} is listening in port ${port}`)
+    logger.info(`API server worker ${process.pid} is listening on port ${port}`)
   );
 };
 
