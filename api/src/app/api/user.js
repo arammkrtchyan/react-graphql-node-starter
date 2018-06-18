@@ -48,6 +48,17 @@ export const User = new GraphQLObjectType({
       type: new GraphQLList(Comment),
       sqlJoin: (userTable, commentTable) =>
         `${userTable}.id = ${commentTable}.author_id AND ${commentTable}.archived = (0 = 1)`
+    },
+    following: {
+      description: 'Users that this user is following',
+      type: new GraphQLList(User),
+      junction: {
+        sqlTable: 'relationships',
+        sqlJoins: [
+          (followerTable, relationTable) => `${followerTable}.id = ${relationTable}.follower_id`,
+          (relationTable, followeeTable) => `${relationTable}.followee_id = ${followeeTable}.id`
+        ]
+      }
     }
   })
 });
