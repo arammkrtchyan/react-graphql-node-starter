@@ -1,7 +1,22 @@
 {
-  "name": "web",
+  "name": "web-cli",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "scripts": {
+    "_exec_in_src_": "cd src && yarn",
+    "_local_env_cmd_": "env-cmd ./env/local/.env",
+    "local": "cross-env NODE_ENV=development yarn _local_env_cmd_ yarn _exec_in_src_ start:watch",
+    "build": "yarn _exec_in_src yarn build"
+  },
+  "engines": {
+    "node": ">=8.9.4",
+    "yarn": ">=1.5.1"
+  },
+  "dependencies": {
+    "cross-env": "^5.2.0",
+    "env-cmd": "^8.0.2"
+  },
+  "devDependencies": {}
 }

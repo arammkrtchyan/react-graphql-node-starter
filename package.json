@@ -9,12 +9,15 @@
   "scripts": {
     "bootstrap": "yarn install && yarn lerna bootstrap || yarn lerna bootstrap",
     "clean": "lerna clean --yes && rm -rf node_modules",
-    "api": "cd api && yarn"
+    "api": "cd api && yarn",
+    "web": "cd web && yarn"
   },
   "workspaces": [
     "babel-preset-app",
     "babel-preset-app-node",
+    "babel-preset-app-web",
     "web",
+    "web/src",
     "api",
     "api/src",
     "sql",

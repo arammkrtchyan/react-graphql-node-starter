@@ -6,7 +6,9 @@
   "packages": [
     "babel-preset-app",
     "babel-preset-app-node",
+    "babel-preset-app-web",
     "web",
+    "web/src",
     "api",
     "api/src",
     "sql",
