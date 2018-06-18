@@ -14,8 +14,10 @@
     "bunyan": "^1.8.12",
     "cluster": "^0.7.7",
     "graphql": "^0.13.2",
+    "graphql-iso-date": "^3.5.0",
     "hashids": "^1.1.4",
     "join-monster": "^2.0.16",
+    "knex": "^0.14.6",
     "koa": "^2.5.1",
     "koa-bodyparser": "^4.2.1",
     "koa-compress": "^3.0.0",
@@ -23,7 +25,9 @@
     "koa-etag": "^3.0.0",
     "koa-morgan": "^1.0.1",
     "koa-router": "^7.4.0",
+    "mysql2": "^1.5.3",
     "spdy": "^3.4.7",
+    "sqlstring": "^2.3.1",
     "zlib": "^1.0.5"
   },
   "devDependencies": {

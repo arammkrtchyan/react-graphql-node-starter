@@ -9,7 +9,7 @@ import { graphqlKoa, graphiqlKoa } from "apollo-server-koa";
 import logger from "./common/logger";
 import zlib from "zlib";
 
-import schema from './api';
+import schema from "./api";
 
 const app = new koa();
 
@@ -20,9 +20,6 @@ app.on("error", err => {
 const health = async ctx => {
   ctx.status = 200;
 };
-const healthRouter = koaRouter();
-healthRouter.get("/", health);
-app.use(healthRouter.routes()).use(healthRouter.allowedMethods());
 
 app.use(
   koaCompress({
@@ -35,14 +32,18 @@ app.use(koaBody({ multipart: true }));
 app.use(conditional());
 app.use(etag());
 
-const isDev = process.env.NODE_ENV || "development" === "development";
+const isDevEnv = process.env.NODE_ENV || "development" === "development";
 
-app.use(morgan(isDev ? "dev" : "short"));
+app.use(morgan(isDevEnv ? "dev" : "short"));
 
-const router = new koaRouter();
+const router = new koaRouter({
+  prefix: "/api"
+});
 
 router.post("/graphql", graphqlKoa({ schema }));
 router.get("/graphql", graphqlKoa({ schema }));
+
+router.get('/health', health);
 
 if (isDevEnv) {
   router.get("/graphiql", graphiqlKoa({ endpointURL: "/api/graphql" }));
