@@ -5,10 +5,11 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "_exec_in_src_": "cd src && yarn",
     "_local_env_cmd_": "env-cmd ./env/local/.env",
-    "local": "cross-env NODE_ENV=development yarn _local_env_cmd_ yarn _exec_in_src_ start:watch",
-    "build": "yarn _exec_in_src yarn build"
+    "local": "yarn _local_env_cmd_ yarn _start_",
+    "_start_": "react-scripts start",
+    "test": "yarn react-scripts test",
+    "build": "yarn react-scripts build"
   },
   "engines": {
     "node": ">=8.9.4",
@@ -16,7 +17,15 @@
   },
   "dependencies": {
     "cross-env": "^5.2.0",
-    "env-cmd": "^8.0.2"
+    "env-cmd": "^8.0.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^1.1.4",
+    "redux": "^4.0.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "babel-plugin-module-resolver": "^3.1.1"
+  }
 }
